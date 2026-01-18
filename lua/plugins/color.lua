@@ -4,13 +4,13 @@ return {
     priority = 1000,
     config = function()
       require("onedark").setup({
-        style = "deep",
+        style = "cool",
         transparent = true,
-        term_colors = true,
+        term_colors = false,
 
         code_style = {
-          comments = "italic",
           functions = "bold",
+          comments = "italic"
         },
 
         lualine = {
@@ -24,7 +24,7 @@ return {
         },
       })
 
-      vim.cmd.colorscheme("onedark")
+     vim.cmd.colorscheme("onedark")
 
       -- Cursor line + number overrides (theme-safe)
       vim.opt.cursorline = true
@@ -35,6 +35,7 @@ return {
       vim.api.nvim_set_hl(0, "CursorLine", {
         bg = "#2c313c",
       })
+      vim.api.nvim_set_hl(0, "LineNr", { fg = "#5B8FBF" }) -- for relative line no to be brighter
 
       -- Improve LSP float visibility
       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })

@@ -2,8 +2,6 @@ vim.opt.number = true --line numbers
 vim.opt.relativenumber = true --relative numberings
 vim.opt.cursorline = true --highlighting the line where cursor is
 vim.opt.guicursor = "" --makes fat cursor even in insert mode 
-vim.api.nvim_set_hl(0, 'CursorLineNr', { fg = '#FFD700', bold = true })--highlights current line no
-vim.api.nvim_set_hl(0, "CursorLine", { bg = "#2c313c" })  -- subtle grayish for current line on
 
 vim.g.netrw_banner = 0  -- removes the netrw banner
 
@@ -13,13 +11,9 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 
---looks
-vim.opt.termguicolors = true --colors as per terminal
-vim.api.nvim_set_hl(0,'Normal',{ bg = 'none'}) --no background
-vim.api.nvim_set_hl(0,'NormalFloat',{ bg = 'none'}) --no background
-
 -- Enable system clipboard
 vim.opt.clipboard = "unnamedplus"
+vim.opt.termguicolors = false --no term gui colors
 
 
 --keymapping
@@ -28,6 +22,7 @@ vim.keymap.set('i','jk','<Esc>',{desc ="jk for entering normal mode"})
 vim.keymap.set('n','r','<C-r>',{desc="r for redoing undo just works good"})
 vim.keymap.set('n',"<leader>fe",vim.cmd.Ex,{desc="for opening explorer"})
 vim.keymap.set('n',"<leader>t",vim.cmd.term,{desc="for opening terminal in vim"})
+vim.keymap.set('n',"<leader>pv",vim.cmd.MarkdownPreview,{desc="for previewing a markdown file."})
 vim.keymap.set('n',"nh",vim.cmd.noh,{desc="stops highlighting of searched text"})
 vim.keymap.set('t',"<A-k>",[[<C-\><C-n>]],{desc="for entering the normal mode in neovim terminal"})
 
